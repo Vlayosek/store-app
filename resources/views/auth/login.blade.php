@@ -33,8 +33,9 @@
       <p class="login-box-msg">Inicia Sesi&oacute;n para acceder</p>
 
       <form action="{{ route('login') }}" method="post">
+        @csrf
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Correo">
+          <input name="email" value="{{ old('email') }}" id="email" type="email" class="form-control" placeholder="Correo">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -42,7 +43,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Contrase&ntilde;a">
+          <input type="password" name="password" id="password" class="form-control" placeholder="Contrase&ntilde;a">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
